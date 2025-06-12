@@ -54,10 +54,10 @@
             <div class="navbar-menu">
                 <div class="navbar-end">
                     <a class="navbar-item" href="#introduction">Introduction</a>
-                    <a class="navbar-item" href="#section">Section</a>
                     <a class="navbar-item" href="#data">Data</a>
                     <a class="navbar-item" href="#eval">Evaluation</a>
                     <a class="navbar-item" href="#model">Model</a>
+                    <a class="navbar-item" href="#debug">Debug</a>
                     <a class="navbar-item" href="#citation">Citation</a>
                 </div>
             </div>
@@ -627,42 +627,21 @@
     </section>
 
 
-    <section class="section">
+    <section class="section" id="debug">
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-10">
-                    <h2 class="title is-3">Performance Results</h2>
+                    <h2 class="title is-3">📝 Citation</h2>
                     <div class="content">
-                        
-                       
-                            
-                        <div class="content">
-                            <p>Our model, specifically the 32B parameter version, significantly outperforms most public models on Enigmata-Eval and ARC-AGI, showcasing enhanced general logical reasoning. This success stems from effective rejection fine-tuning (RFT) and multi-task RL strategies, which improve generalization while preserving existing math reasoning abilities.</p>
-                        </div>
-                        <figure>
-                            <img src="./assets/main_results_1.png" alt="A descriptive alt text for your image" style="width: 600px;">
-                            <figcaption style="color: gray;">Performance of reasoning, generic, and our trained LLMs on reasoning benchmarks</figcaption>
-                          </figure>
-                        
-                          <div class="content">
-                            <p>On Enigmata-Eval, our Qwen2.5-32B-Enigmata model excels in Crypto, Arithmetic, and Logic tasks, indicating strong rule-based reasoning. It also performs competitively in search tasks, though spatial and sequential categories remain challenging.</p>
-                        </div>
-
-                          <figure>
-                            <img src="./assets/main_results2.png" alt="A descriptive alt text for your image" style="width: 600px;">
-                            <figcaption style="color: gray;">Performance of reasoning LLMs, generic LLMs, and our trained LLMs on Enigmata-Eval</figcaption>
-                          </figure>
-
-                          <div class="content">
-                            <p>Incorporating the <strong>Enigmata-Data</strong> synthetic puzzle dataset into large-scale model training significantly boosts general reasoning, including math and STEM, surprisingly improving performance on challenging benchmarks like AIME and GPQA Diamond. This demonstrates an unexpected <strong>generalization benefit</strong> for advanced reasoning models.</p>
-                        </div>
-
-                          <figure>
-                            <img src="./assets/seed_thinking.png" alt="A descriptive alt text for your image" style="width: 600px;">
-                            <figcaption style="color: gray;">Results on benchmarks for general reasoning capabilities</figcaption>
-                          </figure>
-
-
+                        <p>If you find this work useful, please cite our paper:</p>
+                        <pre><code class="latex">
+@article{chen2025enigmata,
+    title={Enigmata: Scaling Logical Reasoning in Large Language Models with Synthetic Verifiable Puzzles},
+    author={Chen, Jiangjie and He, Qianyu and Yuan, Siyu and Chen, Aili and Cai, Zhicheng and Dai, Weinan and Yu, Hongli and Yu, Qiying and Li, Xuefeng and Chen, Jiaze and others},
+    journal={arXiv preprint arXiv:2505.19914},
+    year={2025}
+}
+                        </code></pre>
                     </div>
                 </div>
             </div>
