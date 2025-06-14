@@ -9,6 +9,10 @@
     z-index: 9999 !important; /* Very high z-index to stay on top */
 }
 
+.menu {
+    z-index: 9999 !important; /* Very high z-index to stay on top */
+}
+
 /* Add top padding to prevent content from going under navbar */
 body {
     margin: 0 !important;

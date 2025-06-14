@@ -1,0 +1,26 @@
+/* 1. Stick the menu into place as you scroll: */
+.menu {
+    position: sticky;
+    top: 1rem;         /* distance from the top of the viewport */
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;  /* scrolls internally if it grows too tall */
+  }
+  
+  /* 2. Ensure all your menu links share the same base color: */
+  .menu-list a {
+    color: #4a4a4a;      /* or whatever Bulma’s default “body-grey” is */
+    transition: color .2s;
+  }
+  
+  /* 3. Hover / active states (optional but nice): */
+  .menu-list a:hover,
+  .menu-list a.is-active {
+    color: #3a76ed;      /* match your brand blue */
+  }
+  
+  /* 4. Specifically reset any rogue styling on the last item: */
+  .menu-list li:last-child a {
+    /* if it had a stray `.has-text-white` or inline style, this will override it */
+    color: #4a4a4a !important;
+  }
+  
