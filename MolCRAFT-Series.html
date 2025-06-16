@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description"
+        content="MolCRAFT Series: Advancing Structure-Based Drug Design" />
+    <meta name="keywords, Drug Design, Molecule Generation, Deep Learning, Computational Biology"
+        content="MolCRAFT Series" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MolCRAFT Series: Advancing Structure-Based Drug Design</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/bulma.min.css" />
+    <link rel="stylesheet" href="./css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="./css/fontawesome.all.min.css" />
+    <!-- <link rel="stylesheet" href="./css/fontawesome_6_7_2.all.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/enhanced-styles.css" />
+    <link rel="stylesheet" href="./css/final-enhancements.css" />
+    <link rel="stylesheet" href="./css/navbar-fix.css" />
+    <link rel="stylesheet" href="./css/navbar-alignment-fix.css" />
+    <link rel="stylesheet" href="./css/overlap-fix.css" />
+    <link rel="stylesheet" href="./css/spacing-fix.css" />
+    <link rel="stylesheet" href="./css/author-affiliation-styles.css" />
+    <link rel="icon" href="./assets/gensi_logo_black_topdown.png" type="image/png" />
+    <!-- add page icon at 64 x 64-->
+    <!-- <link rel="icon" type="image/png" href="./assets/re.png" sizes="256x256" /> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./js/fontawesome.all.min.js"></script>
+    <script src="./js/bulma-carousel.min.js"></script>
+    <script src="./js/bulma-slider.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/enhanced-animations.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .menu {
+          position: fixed;
+          top: 20rem;
+          left: 5rem;
+          width: 10rem;
+        }
+        .main-content {
+          margin-left: 10rem;
+          padding-top: 20rem;
+        }
+    </style>
+</head>
+
+
+    
+
+
+
+<body>
+
+    <section class="hero">
+        <div class="hero-body">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <h1 class="title is-1 publication-title">
+                  MolCRAFT Series
+                </h1>
+                <h2 class="subtitle is-3 publication-subtitle">
+                  Advancing Structure-Based Drug Design
+                </h2>
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block"><sup>1</sup>GenSI-Lab of Tsinghua AIR</span>
+                  &nbsp;
+                  <span class="author-block"><sup>2</sup>Department of Computer Science and Technology, Tsinghua University</span>
+                  <span class="author-block"><sup>3</sup>Shanghai Institute of Materia Medica, Chinese Academy of Sciences</span>
+              <!-- <br> -->
+                  <span class="author-block"><sup>4</sup>University of Illinois Urbana-Champaign</span> 
+              &nbsp;
+                  <span class="author-block"><sup>5</sup>Sichuan University</span> 
+              &nbsp;
+                  <span class="author-block"><sup>6</sup>Peking University</span> 
+                </div>
+                <div class="is-size-6 publication-authors">
+                  <span class="author-block">*Full author list in Contributions</span>
+                </div>
+      
+                <div class="column has-text-centered">
+                  <div class="publication-links">
+                    <!-- Code Link. -->
+                    <span class="link-block">
+                      <a href="https://github.com/AlgoMole/MolCRAFT" class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                      </a>
+                    </span>
+                    <!-- Dataset Link. -->
+                    <span class="link-block">
+                      <a href="https://drive.google.com/drive/folders/1A3Mthm9ksbfUnMCe5T2noGsiEV1RfChH?usp=sharing"
+                         class="external-link button is-normal is-rounded is-dark"> <!-- TODO: fix dataset link -->
+                        <span class="icon">
+                            <i class="fa-regular fa-database"></i>
+                        </span>
+                        <span>Data</span>
+                        </a>
+                    </span>
+                    <!-- Model Link. -->
+                    <span class="link-block">
+                        <a href="https://huggingface.co/GenSI/MolCRAFT" class="external-link button is-dark">
+                            <span class="icon">
+                                🤗
+                            </span>
+                            <span>Model</span>
+                        </a>
+                    </span>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    <!-- Sidebar -->
+    <aside class="menu" >
+        <p class="menu-label">MolCRAFT-Series</p>
+        <ul class="menu-list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#molcraft">MolCRAFT</a></li>
+            <li><a href="#molpilot">MolPilot</a></li>
+            <li><a href="#moljo">MolJO</a></li>
+            <li><a href="#citation">Citation</a></li>
+        </ul>
+    </aside>
+
+    
+    
+
+    
+    <div class="container">
+        
+        <!-- Main content -->
+
+        
+
+        
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="section navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="#">
+                        🧩 GenSI
+                    </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="index.html">Home</a>
+                        <a class="navbar-item" href="GeoBFN.html">GeoBFN</a>
+                        <a class="navbar-item" href="MolCRAFT-Series.html">MolCRAFT-Series</a>
+                        <a class="navbar-item" href="CysBFN.html">CysBFN</a>
+                        <a class="navbar-item" href="ProfileBFN.html">ProfileBFN</a>
+                        <a class="navbar-item" href="BFN42Dgraph.html">BFN42Dgraph</a>
+                        <a class="navbar-item" href="Others.html">Others</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <section class="section" id="overview">
+            <div class="container is-max-desktop">
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                  <h2 class="title is-3">Overview</h2>
+                  <div class="content has-text-justified">
+                    <p>
+                      MolCRAFT series represents a concerted effort to tackle fundamental challenges in <b>Structure-Based Drug Design (SBDD)</b> and <b>Structure-Based Molecule Optimization (SBMO)</b> using advanced deep generative models and techniques. 
+                      Our projects focus on accurately modeling molecular geometries, navigating hybrid continuous-discrete parameter spaces, and efficiently optimizing molecular properties against specific protein targets. 
+                      Each contribution within this series introduces innovative approaches—from continuous parameter space modeling and modality-specific optimal scheduling to gradient-guided optimization—aiming to push the boundaries of generative models in drug discovery. 
+                      The ultimate goal is to accelerate the design of novel therapeutic candidates by generating molecules with superior binding affinities and realistic, stable 3D conformations.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+
+
+          <section class="section project-section" id="molcraft">
+            <div class="container is-max-desktop">
+              <div class="columns is-centered has-text-centered">
+                <!-- <div class="column is-two-fifths">
+                   <img src="./static/images/molcraft_framework.png" alt="MolCRAFT Framework"/>
+                </div> -->
+                <div class="column">
+                  <h2 class="title is-3">MolCRAFT: Craft Molecular Structures in Parameter Space</h2>
+                  <div class="content has-text-centered">
+                    <div class="publication-links">
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2404.12141" target="_blank"
+                           class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon"><i class="fa-solid fa-file-pdf" style="color: #ec4646;"></i></span>
+                          <span>Paper</span>
+                        </a>
+                      </span>
+                      <span class="link-block">
+                        <a href="https://github.com/AlgoMole/MolCRAFT/tree/dev/MolCRAFT" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon"><i class="fab fa-github"></i></span>
+                          <span>Code</span>
+                        </a>
+                      </span>
+                      <span class="link-block">
+                        <a href="https://huggingface.co/GenSI/MolCRAFT" class="external-link button is-dark">
+                            <span class="icon">
+                                🤗
+                            </span>
+                            <span>Model</span>
+                        </a>
+                    </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- </div>
+          </section>
+            
+          <section class="section project-section" id="unified-parameter">
+            <div class="container is-max-desktop"> -->
+              <h2 class="title is-4 is-centered">Unified Parameter in Structured Latent Space</h2>
+              <div class="columns is-centered">
+                <div class="column">
+                  <div class="content">
+                    <img src="./assets/MolCRAFT/molcraft_framework.png">
+                    <p>
+                      <strong>MolCRAFT architecture:</strong> continuous coordinates and discrete types are represented in a unified parameter space derived through Bayesian inference. 
+                      This allows for smooth transformation toward molecular structures.
+                    </p>
+                  </div>
+                </div>
+          
+                <div class="column">
+                  <div class="content">
+                    <img src="./assets/MolCRAFT/molcraft.gif">
+                    <p>
+                      <strong>Generative trajectory:</strong> the generated molecules quickly take shape and then get progressively refined, focusing the model capacity on the crucial regions.
+                      In contrast, diffusions waste much of the capacity and heavily rely on the last 1/4 steps.
+                    </p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+            
+          <section class="section project-section" id="variance-reduction">
+            <div class="container is-max-desktop">
+              <h2 class="title is-4 is-centered">Variance Reduction Sampling Strategy</h2>
+              <div class="content">
+                <p class="has-text-justified">
+                    The original BFN sampling (A) effectively reduces <strong>input variance</strong> by informing the neural network with the Bayesian posterior θ (distributional parameter), operating within a structured latent space instead of the high-variance sample space of noisy input y (B).
+                    We propose to directly update the parameters θ<sub>i+1</sub> from the current prediction x and prior θ<sub>0</sub>, thanks to the inherent additive accuracy property by design of the latent space.
+                    This bypasses the need for adding noise to obtain y<sub>i</sub> from predicted x, further reducing <strong>sampling variance</strong>.
+                    This strategy resembles consistency modeling and is particularly effective in SBDD, where the goal is to generate high-quality molecular structures with minimal noise and maximum fidelity.
+                </p>
+                <figure class="image">
+                  <img src="./assets/MolCRAFT/geobfn_graphical_model.png" >
+                </figure>
+                <figure class="image">
+                  <img src="./assets/MolCRAFT/molcraft_sampling.JPG" >
+                </figure>
+              </div>
+            </div>
+          </section>
+
+
+          <section class="section project-section" id="molpilot">
+            <div class="container is-max-desktop">
+              <div class="columns is-centered has-text-centered">
+                <div class="column">
+                  <h2 class="title is-3">MolPilot: Pilot MolCRAFT via Optimal Scheduling</h2>
+                  <div class="content has-text-centered">
+                    <div class="publication-links">
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2505.07286" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon"><i class="fa-solid fa-file-pdf" style="color: #ec4646;"></i></span>
+                          <span>Paper</span>
+                        </a>
+                      </span>
+                      <span class="link-block">
+                        <a href="https://github.com/AlgoMole/MolCRAFT/tree/dev/MolPilot" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon"><i class="fab fa-github"></i></span>
+                          <span>Code</span>
+                        </a>
+                      </span>
+                      <span class="link-block">
+                        <a href="https://huggingface.co/GenSI/MolPilot" class="external-link button is-dark">
+                            <span class="icon">
+                                🤗
+                            </span>
+                            <span>Model</span>
+                        </a>
+                    </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- </div>
+          </section>
+          
+          <section class="section project-section" id="vos-strategy">
+            <div class="container is-max-desktop"> -->
+              <h2 class="title is-4 is-centered">VLB-Optimal Scheduling (VOS) Strategy</h2>
+              <div class="columns is-centered is-vcentered">
+                <div class="column">
+                  <div class="content">
+                    <p class="has-text-justified">
+                      MolPilot tackles the challenge of modeling the <strong>twisted multimodal probability path</strong> in molecules—continuous 3D positions and discrete 2D topologies. 
+                      We establish that in multimodal case, <strong>Variational Lower Bound (VLB)</strong> is a path integral w.r.t. multivariate noise schedule functions, which is no longer invariant to noise scheduling and makes it crucial to derive the VLB-optimal schedule for modeling the complex inter-dependencies between modalities.
+                    </p>
+                    <p class="has-text-justified">
+                      VOS ensures a principled generation process by:
+                      <ul>
+                        <li>designing a <strong>generalized training objective</strong> that remains invariant to all noise schedule functions, which paves the way for finding the optimal one tailored for the intertwined modalities;</li>
+                        <li>employing a <strong>dynamic programming algorithm</strong> to search for the optimal noise schedules that maximize the VLB, ensuring that the generation process is efficient and effective.</li>
+                      </ul>
+                    </p>
+                    <figure class="image">
+                      <img src="./assets/MolCRAFT/molpilot_vos.png" alt="MolPilot VOS Strategy Concept">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <section class="section project-section" id="enhanced-geometric-modeling">
+            <div class="container is-max-desktop">
+              <h2 class="title is-4 is-centered">Enhanced Geometric Modeling & Interaction Fidelity</h2>
+              <div class="columns is-centered is-vcentered">
+                  <div class="column">
+                      <div class="content">
+                           <p class="has-text-justified">
+                              <strong>Superior Geometric Accuracy:</strong> Our VOS strategy facilitates a more harmonious and geometrically accurate co-generation of both continuous coordinates and discrete topologies, crucial for creating realistic and effective drug candidates.
+                            </p>
+                      </div>
+                  </div>
+                  <div class="column">
+                      <div class="content">
+                          <p class="has-text-justified">
+                              <strong>High-Fidelity Molecular Structures (95%+ PB-Valid):</strong> MolPilot consistently generates molecules with high validity and maintains strong binding affinities, demonstrating its robust capability to produce plausible drug-like molecules.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <figure class="image">
+                <img src="./assets/MolCRAFT/molpilot_geometry_combined.JPG">
+              </figure>
+              <br />
+              <figure class="image">
+                <img src="./assets/MolCRAFT/molpilot_baseline_comp.png"/>
+              </figure>
+            </div>
+          </section>
+
+
+
+          <section class="section project-section" id="moljo">
+            <div class="container is-max-desktop">
+              <div class="columns is-centered has-text-centered">
+                <div class="column">
+                  <h2 class="title is-3">MolJO: Guide MolCRAFT with Expert Preference</h2>
+                  <div class="content has-text-centered">
+                    <div class="publication-links">
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2411.13280" target="_blank"
+                           class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon"><i class="fa-solid fa-file-pdf" style="color: #ec4646;"></i></span>
+                          <span>Paper</span>
+                        </a>
+                      </span>
+                      <span class="link-block">
+                        <a href="https://github.com/AlgoMole/MolCRAFT/tree/dev/MolJO" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon"><i class="fab fa-github"></i></span>
+                          <span>Code</span>
+                        </a>
+                      </span>
+                      <span class="link-block">
+                        <a href="https://huggingface.co/GenSI/MolJO" class="external-link button is-dark">
+                            <span class="icon">
+                                🤗
+                            </span>
+                            <span>Model</span>
+                        </a>
+                    </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- </div>
+          </section>
+          
+          <section class="section project-section" id="gradient-guidance">
+            <div class="container is-max-desktop"> -->
+              <h2 class="title is-4 is-centered">Gradient-Based Joint Modality Guidance</h2>
+              <div class="columns is-centered is-vcentered">
+                <div class="column">
+                  <div class="content">
+                    <p class="has-text-justified">
+                      MolJO pioneers a gradient-based Structure-Based Molecule Optimization (SBMO) by operating within such <strong>continuous and differentiable latent space</strong> for multi-modalities. 
+                      We further explore the update mechanism of the latent space, introducing a <strong>backward correction strategy</strong> that unifies the formulation of original BFN sampling and variance reduction strategy, offering a seamless trade-off between exploration (higher variance, discovering diverse molecular candidates but risking sample quality) and exploitation (reduced variance, fine-tuning promising ones but may not fully explore), leading to more robust and efficient optimization paths.
+                    </p>
+                    <figure class="image">
+                      <img src="./assets/MolCRAFT/moljo_framework_all.png" alt="MolJO Overall Framework and Gradient Guidance">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          
+            <section class="section project-section" id="practical-drug-design">
+                <div class="container is-max-desktop">
+                <h2 class="title is-4 is-centered">Practical Drug Design Scenarios</h2>
+                <div class="columns is-centered is-vcentered">
+                    <div class="column">
+                        <div class="content">
+                            <p class="has-text-justified">
+                                MolJO is a versatile optimization framework that has been extended to a wide range of practical settings, and achieves state-of-the-art performance in practical optimization tasks, including multi-objective and constrained optimization for R-group redesign, scaffold hopping, etc.
+                            </p>
+                            <figure class="image">
+                                <img src="./assets/MolCRAFT/moljo_rgroup.png" alt="MolJO Performance on Benchmarks">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <hr>
+
+
+            
+            <section class="section" id="citation">
+                <div class="container is-max-desktop content">
+                <h2 class="title">BibTeX Citations</h2>
+                <p>If you use any part of the MolCRAFT series in your research, please cite the respective papers:</p>
+                <h3 class="title is-4 mt-5">MolCRAFT</h3>
+                <pre><code>@inproceedings{qu2024molcraft,
+                title={MolCRAFT: Structure-Based Drug Design in Continuous Parameter Space},
+                author={Qu, Yanru and Qiu, Keyue and Song, Yuxuan and Gong, Jingjing and Han, Jiawei and Zheng, Mingyue and Zhou, Hao and Ma, Wei-Ying},
+                booktitle={International Conference on Machine Learning (ICML)},
+                year={2024},
+            }</code></pre>
+                <h3 class="title is-4 mt-5">MolPilot</h3>
+                <pre><code>@inproceedings{qiu2025molpilot,
+                title={Piloting Structure-Based Drug Design via Modality-Specific Optimal Schedule},
+                author={Qiu, Keyue and Song, Yuxuan and Fan, Zhehuan and Liu, Peidong and Zhang, Zhe and Zheng, Mingyue and Zhou, Hao and Ma, Wei-Ying},
+                booktitle={International Conference on Machine Learning (ICML)},
+                year={2025},
+            }</code></pre>
+                <h3 class="title is-4 mt-5">MolJO</h3>
+                <pre><code>@inproceedings{qiu2025moljo,
+                title={Empower Structure-Based Molecule Optimization with Gradient Guidance},
+                author={Qiu, Keyue and Song, Yuxuan and Yu, Jie and Ma, Hongbo and Cao, Ziyao and Zhang, Zhilong and Wu, Yushuai and Zheng, Mingyue and Zhou, Hao and Ma, Wei-Ying},
+                booktitle={International Conference on Machine Learning (ICML)},
+                year={2025},
+            }</code></pre>
+                </div>
+            </section>
+          
+          <!-- … other sections … -->
+        </div>
+  </body>
+
+
+
+
+</html>
