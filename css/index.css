@@ -46,6 +46,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2rem 0;
 }
 
+.timeline-item {
+  margin-bottom: 2rem; /* adjust as needed */
+}
+
 a:link {
   color: black;         /* 绿色文字 */
 }
