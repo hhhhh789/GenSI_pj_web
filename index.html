@@ -127,11 +127,54 @@
 
                         </div>
                     </div>
-                    <video autoplay loop muted playsinline>
-                        <source src="./assets/BFN_series/freecompress-process.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                      </video>
-                </div>
+                    
+
+                    <style>
+                        /* 简单的 loading spinner */
+                        .spinner {
+                          border: 4px solid #f3f3f3;
+                          border-top: 4px solid #3273dc; /* Bulma 主色 */
+                          border-radius: 50%;
+                          width: 40px;
+                          height: 40px;
+                          animation: spin 1s linear infinite;
+                          margin: auto;
+                          margin-top: 2rem;
+                        }
+                        
+                        @keyframes spin {
+                          0% { transform: rotate(0deg); }
+                          100% { transform: rotate(360deg); }
+                        }
+                        
+                        /* 视频初始隐藏 */
+                        #video-wrapper video {
+                          display: none;
+                        }
+                        </style>
+                        
+                        <div id="video-wrapper" class="has-text-centered">
+                          <!-- Loading 动画 -->
+                          <div id="spinner" class="spinner"></div>
+                        
+                          <!-- 视频内容 -->
+                          <video id="myVideo" autoplay loop muted playsinline>
+                            <source src="./assets/BFN_series/freecompress-process.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                        
+                        <script>
+                        const video = document.getElementById('myVideo');
+                        const spinner = document.getElementById('spinner');
+                        
+                        // 当视频可以播放时，隐藏 spinner，显示视频
+                        video.addEventListener('canplay', () => {
+                          spinner.style.display = 'none';
+                          video.style.display = 'block';
+                        });
+                        </script>
+                        
             </section>
           
 
