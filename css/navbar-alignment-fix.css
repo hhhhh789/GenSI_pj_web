@@ -3,7 +3,7 @@
 /* Force navbar to have consistent height */
 .navbar,
 .navbar.is-fixed-top {
-    height: 52px !important; /* Standard navbar height */
+    height: 50px !important; /* Standard navbar height */
     min-height: 52px !important;
     z-index: 1030 !important; /* Ensure navbar stays on top */
 }
@@ -15,7 +15,7 @@ body {
 
 /* Container should fill the navbar height */
 .navbar > .container {
-    height: 100% !important;
+    height: 98% !important;
     display: flex !important;
     align-items: stretch !important;
 }
